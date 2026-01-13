@@ -475,12 +475,13 @@ export default {
     ], 
 
     ////// therotical questions end here
-
+  /// 2025
     theoryQuestions: [
   {
     marks: 2,
     question: "Explain why cooking is faster in a pressure cooker.",
-    answer: "Higher pressure increases boiling point..."
+    answer: "Higher pressure increases boiling point...",
+    year: "2020",
   },
   {
     marks: 3,
@@ -492,6 +493,21 @@ export default {
     question: "Explain colligative properties in detail with examples.",
     answer: "Colligative properties depend on number of solute particles..."
   }
+
+
+  /// 2024
+
+
+  /// 2023
+
+  /// 2022
+
+
+  // 2021
+
+
+  /// 2020
+
 ],
 
   

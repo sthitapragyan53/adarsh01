@@ -284,6 +284,7 @@ export default function ChapterDetail() {
                     <p>{tq.answer}</p>
                   </details>
                 )}
+                
               </div>
             ))
           ) : (
