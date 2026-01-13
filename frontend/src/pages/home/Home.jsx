@@ -9,24 +9,52 @@ export default function Home() {
 
   const [board, setBoard] = useState("");
   const [classLevel, setClassLevel] = useState("");
+  const [loadingUser, setLoadingUser] = useState(true);
 
   useEffect(() => {
-    const savedBoard = localStorage.getItem("board");
-    const savedClass = localStorage.getItem("class");
+    const fetchUser = async () => {
+      const token = localStorage.getItem("token");
 
-    // ❌ if user directly opens /home without selecting
-    if (!savedBoard || !savedClass) {
-      navigate("/");
-      return;
-    }
+      if (!token) {
+        navigate("/login");
+        return;
+      }
 
-    setBoard(savedBoard);
-    setClassLevel(savedClass);
+      try {
+        const res = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/user/me`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+
+        if (!res.ok) throw new Error("Unauthorized");
+
+        const user = await res.json();
+
+        // If onboarding not done → go to choose-board
+        if (!user.board || !user.classLevel) {
+          navigate("/choose-board");
+          return;
+        }
+
+        // Otherwise set data
+        setBoard(user.board);
+        setClassLevel(user.classLevel);
+      } catch {
+        navigate("/login");
+      } finally {
+        setLoadingUser(false);
+      }
+    };
+
+    fetchUser();
   }, [navigate]);
 
+  // Wait until user is loaded before rendering
+  if (loadingUser) return null;
+
   const handleChangeBoard = () => {
-    localStorage.removeItem("board");
-    localStorage.removeItem("class");
     navigate("/choose-board");
   };
 
@@ -37,7 +65,6 @@ export default function Home() {
       <div className="home-glass">
         {/* LEFT CONTENT */}
         <div className="home-left">
-          {/* 🔹 Board + Class Badge */}
           <div className="user-meta">
             🎓 {board} • Class {classLevel}
             <button className="change-btn" onClick={handleChangeBoard}>
