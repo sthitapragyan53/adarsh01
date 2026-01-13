@@ -75,7 +75,7 @@ export default function ChooseBoard() {
         throw new Error("Failed to save onboarding");
       }
 
-      window.location.href = "/home";
+      window.location.replace("/home");
     } catch (err) {
       alert(err.message);
     } finally {
