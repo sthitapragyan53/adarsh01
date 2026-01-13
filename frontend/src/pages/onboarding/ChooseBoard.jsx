@@ -10,10 +10,33 @@ export default function ChooseBoard() {
   const [loading, setLoading] = useState(false);
 
   const boards = [
-    "CBSE", "ICSE", "CHSE", "State", "CGBSE", "COHSEM", "DHSE", "DPUE",
-    "GBSHE", "GSEB", "HBSE", "HPBOSE", "HSE", "JAC", "MBOSE", "MBSE",
-    "MPBSE", "MSBSHSE", "NBSE", "PSEB", "RBSE", "SBSE", "TBSE",
-    "TSBIE", "UBSE", "UPMSP", "WBCHSE"
+    "CBSE",
+    "ICSE",
+    "CHSE",
+    "State",
+    "CGBSE",
+    "COHSEM",
+    "DHSE",
+    "DPUE",
+    "GBSHE",
+    "GSEB",
+    "HBSE",
+    "HPBOSE",
+    "HSE",
+    "JAC",
+    "MBOSE",
+    "MBSE",
+    "MPBSE",
+    "MSBSHSE",
+    "NBSE",
+    "PSEB",
+    "RBSE",
+    "SBSE",
+    "TBSE",
+    "TSBIE",
+    "UBSE",
+    "UPMSP",
+    "WBCHSE",
   ];
 
   const scroll = (dir) => {
@@ -52,7 +75,7 @@ export default function ChooseBoard() {
         throw new Error("Failed to save onboarding");
       }
 
-      navigate("/home");
+      window.location.href = "/home";
     } catch (err) {
       alert(err.message);
     } finally {
@@ -63,7 +86,6 @@ export default function ChooseBoard() {
   return (
     <div className="board-wrapper">
       <div className="board-glass">
-
         {/* ================= STEP 1 ================= */}
         {!selectedBoard && (
           <>
@@ -73,7 +95,10 @@ export default function ChooseBoard() {
             </p>
 
             <div className="scroll-wrapper">
-              <button className="scroll-btn left" onClick={() => scroll("left")}>
+              <button
+                className="scroll-btn left"
+                onClick={() => scroll("left")}
+              >
                 ‹
               </button>
 
@@ -90,7 +115,10 @@ export default function ChooseBoard() {
                 ))}
               </div>
 
-              <button className="scroll-btn right" onClick={() => scroll("right")}>
+              <button
+                className="scroll-btn right"
+                onClick={() => scroll("right")}
+              >
                 ›
               </button>
             </div>
@@ -127,7 +155,6 @@ export default function ChooseBoard() {
             {loading && <p>Saving your preferences…</p>}
           </>
         )}
-
       </div>
     </div>
   );
