@@ -25,12 +25,14 @@ export default function ChapterDetail() {
           return;
         }
 
-        /* 1️⃣ Load syllabus index */
+        /* 1️⃣ Load syllabus index */ ////////////////////////////////////////////////////////////////////////////////////
         const syllabusRes = await fetch(
-          `http://localhost:5000/api/syllabus/${classLevel}/${board}/${subject}`,
+          `${
+            import.meta.env.VITE_API_URL
+          }/api/syllabus/${classLevel}/${board}/${subject}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
-
+        /////////////////////////////////////////////////////////////////////////////////////////////////////
         if (!syllabusRes.ok) throw new Error("Failed to load syllabus");
 
         const syllabusData = await syllabusRes.json();
@@ -42,21 +44,24 @@ export default function ChapterDetail() {
         if (!foundChapter) throw new Error("Chapter not found");
         setChapter(foundChapter);
 
-        /* 2️⃣ Load chapter content */
+        /* 2️⃣ Load chapter content */ /////////////////////////////////////////////////////////////////////////////////////
         const contentRes = await fetch(
-          `http://localhost:5000/api/chapter/${classLevel}/${board}/${subject}/${foundChapter.file}`,
+          `${
+            import.meta.env.VITE_API_URL
+          }/api/chapter/${classLevel}/${board}/${subject}/${foundChapter.file}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
-
+        /////////////////////////////////////////////////////////////////////////////////////////////////////
         if (!contentRes.ok) throw new Error("Chapter content not found");
 
         const contentData = await contentRes.json();
         setContent(contentData);
 
         /* 3️⃣ Load progress and check completion */
-        const progressRes = await fetch("http://localhost:5000/api/progress", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const progressRes = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/progress`,
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
 
         const progressData = await progressRes.json();
         const subjectProgress = progressData.find((p) => p.subject === subject);
@@ -80,8 +85,8 @@ export default function ChapterDetail() {
       const token = localStorage.getItem("token");
 
       const url = isCompleted
-        ? "http://localhost:5000/api/progress/uncomplete"
-        : "http://localhost:5000/api/progress/complete";
+        ? `${import.meta.env.VITE_API_URL}/api/progress/uncomplete`
+        : `${import.meta.env.VITE_API_URL}/api/progress/complete`;
 
       const res = await fetch(url, {
         method: "POST",

@@ -25,7 +25,7 @@ export default function Dashboard() {
           return;
         }
 
-        const res = await fetch("http://localhost:5000/api/user/me", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/user/me`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -55,7 +55,7 @@ export default function Dashboard() {
       const token = localStorage.getItem("token");
       if (!token) return;
 
-      const res = await fetch("http://localhost:5000/api/progress", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/progress`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -84,7 +84,7 @@ export default function Dashboard() {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `http://localhost:5000/api/syllabus/${classLevel}/${board}`,
+        `${import.meta.env.VITE_API_URL}/api/syllabus/${classLevel}/${board}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -257,7 +257,10 @@ export default function Dashboard() {
 
       {/* ================= ACTION ================= */}
       <section className="dashboard-action">
-        <button className="take-test-btn" onClick={() => navigate("/exam-dashboard")}>
+        <button
+          className="take-test-btn"
+          onClick={() => navigate("/exam-dashboard")}
+        >
           Take a Test
         </button>
       </section>

@@ -18,16 +18,18 @@ export default function SubjectResources() {
     const fetchSubject = async () => {
       try {
         const token = localStorage.getItem("token");
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         const res = await fetch(
-          `http://localhost:5000/api/syllabus/${classLevel}/${normalizedBoard}/${subject}`,
+          `${
+            import.meta.env.VITE_API_URL
+          }/api/syllabus/${classLevel}/${normalizedBoard}/${subject}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }
         );
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         if (!res.ok) {
           throw new Error("Syllabus not found");
         }
@@ -84,7 +86,6 @@ export default function SubjectResources() {
             className="chapter-card"
             onClick={() =>
               navigate(`/class/${classLevel}/${board}/${subject}/${chapter.id}`)
-
             }
           >
             <strong>Unit {chapter.unit}</strong>
