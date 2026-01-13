@@ -476,23 +476,22 @@ export default {
 
     ////// therotical questions end here
   /// 2025
-    theoryQuestions: [
+    
+ theoryQuestions: [
   {
     marks: 2,
     question: "Explain why cooking is faster in a pressure cooker.",
-    answer: "Higher pressure increases boiling point...",
-    year: "2020",
+    answer: "Higher pressure increases boiling point.",
+    year: "2025"
   },
   {
     marks: 3,
-    question: "Define azeotrope and explain its types with examples.",
-    answer: "An azeotrope is a constant boiling mixture..."
-  },
-  {
-    marks: 5,
-    question: "Explain colligative properties in detail with examples.",
-    answer: "Colligative properties depend on number of solute particles..."
+    question: "Define azeotrope with example.",
+    answer: "Azeotrope is a constant boiling mixture...",
+    year: "2024"
   }
+]
+
 
 
   /// 2024
@@ -508,7 +507,7 @@ export default {
 
   /// 2020
 
-],
+
 
   
 

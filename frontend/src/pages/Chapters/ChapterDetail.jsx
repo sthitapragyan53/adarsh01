@@ -284,7 +284,9 @@ export default function ChapterDetail() {
                     <p>{tq.answer}</p>
                   </details>
                 )}
-                
+
+                {/* ✅ Year added */}
+                {tq.year && <small>Year: {tq.year}</small>}
               </div>
             ))
           ) : (
