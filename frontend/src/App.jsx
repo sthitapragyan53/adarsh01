@@ -43,7 +43,8 @@ function App() {
           }
         />
 
-        <Route path="/google-success" element={<GoogleSuccess />} />
+       <Route path="/google-success/*" element={<GoogleSuccess />} />
+
 
 
         <Route
