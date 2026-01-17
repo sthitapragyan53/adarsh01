@@ -9,6 +9,10 @@ import SubjectResources from "./pages/Chapters/SubjectResources";
 import ChapterDetail from "./pages/Chapters/ChapterDetail";
 import Dashboard from "./pages/dashboard/Dashboard";
 import ExamDashboard from "./pages/test/ExamDashboard";
+import GoogleSuccess from "./pages/auth/GoogleSuccess";
+
+
+
 
 
 import PublicRoute from "./routes/PublicRoute";
@@ -38,6 +42,9 @@ function App() {
             </PublicRoute>
           }
         />
+
+        <Route path="/google-success" element={<GoogleSuccess />} />
+
 
         <Route
           path="/choose-board"
