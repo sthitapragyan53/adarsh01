@@ -81,13 +81,7 @@ export const class12MathematicsIndex = {
       weightage: "Medium",
       file: "differentialEquations",
     },
-    {
-      id: "Vector-Algebra",
-      unit: 12,
-      title: "Vector Algebra",
-      weightage: "Medium",
-      file: "vectorAlgebra",
-    },
+    
     {
       id: "Vector-Algebra",
       unit: 13,
