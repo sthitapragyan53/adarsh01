@@ -1,5 +1,8 @@
 import express from "express";
 import cors from "cors";
+import session from "express-session";
+import passport from "passport";
+import "./config/passport.js";
 
 import authRoutes from "./routes/auth.routes.js";
 import boardRoutes from "./routes/boardRoutes.js";
@@ -10,9 +13,25 @@ import progressRoutes from "./routes/progressRoutes.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://adarsh01.vercel.app",
+  credentials: true
+}));
+
 app.use(express.json());
 
+// 🔹 Session
+app.use(session({
+  secret: "adarsh-google-auth",
+  resave: false,
+  saveUninitialized: false
+}));
+
+// 🔹 Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// 🔹 Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/board", boardRoutes);
 app.use("/api/user", userRoutes);
@@ -21,7 +40,7 @@ app.use("/api/chapter", chapterRoutes);
 app.use("/api/progress", progressRoutes);
 
 app.get("/", (req, res) => {
-  res.send(" sthita Backend  is Running.. yeeeeee.");
+  res.send("sthita Backend is Running.. yeeeeee.");
 });
 
 export default app;

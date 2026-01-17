@@ -25,31 +25,15 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      // 🔐 Call backend login API
       const response = await loginUser(formData);
 
-      /*
-        Expected backend response shape:
-        {
-          token: "...",
-          user: {
-            board,
-            classLevel
-          }
-        }
-      */
-
-      // ✅ Save JWT
       localStorage.setItem("token", response.token);
 
-      // ✅ If user already completed onboarding (MongoDB)
       if (response.user?.board && response.user?.classLevel) {
         localStorage.setItem("board", response.user.board);
         localStorage.setItem("class", response.user.classLevel);
-
-        navigate("/home"); // or /dashboard
+        navigate("/home");
       } else {
-        // ✅ First-time user → onboarding
         navigate("/choose-board");
       }
     } catch (err) {
@@ -57,7 +41,11 @@ export default function Login() {
     }
   };
 
-  /* ================= UI (UNCHANGED) ================= */
+  /* ================= GOOGLE LOGIN ================= */
+  const handleGoogleLogin = () => {
+    window.location.href = `${import.meta.env.VITE_API_URL}/api/auth/google`;
+  };
+
   return (
     <div className="login-page">
       <div className="login-card">
@@ -102,6 +90,44 @@ export default function Login() {
               Login
             </button>
           </form>
+
+          {/* 🔹 Divider */}
+          <div style={{
+            margin: "15px 0",
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            color: "#999"
+          }}>
+            <div style={{ flex: 1, height: "1px", background: "#ddd" }}></div>
+            OR
+            <div style={{ flex: 1, height: "1px", background: "#ddd" }}></div>
+          </div>
+
+          {/* 🔹 Google Button */}
+          <button
+            onClick={handleGoogleLogin}
+            style={{
+              width: "100%",
+              padding: "10px",
+              border: "1px solid #ddd",
+              borderRadius: "8px",
+              background: "#fff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px",
+              cursor: "pointer",
+              fontWeight: "500"
+            }}
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+              alt="google"
+              style={{ width: "18px", height: "18px" }}
+            />
+            Continue with Google
+          </button>
 
           <p className="bottom-text">
             Don’t have an account?{" "}
