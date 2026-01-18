@@ -216,6 +216,7 @@
 
   .login-card {
     width: 100%;
+     height: auto; 
   }
 
   .login-left {
