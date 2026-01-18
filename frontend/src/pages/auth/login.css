@@ -212,22 +212,20 @@
 
 @media (max-width: 480px) {
   .login-page {
-    
-    align-items: flex-start;   /* move card to top */
+    align-items: flex-start;
     justify-content: flex-start;
-    padding-top: 20px;
-    padding-bottom: 40px;
-    min-height: 650px;
+    padding: 20px 15px 40px;
+    min-height: auto;      /* 🔥 remove fixed height completely */
   }
 
   .login-card {
     width: 100%;
     height: auto;
-    overflow: visible;   /* ✅ allow content to show */
+    overflow: visible;
   }
 
   .login-left {
-    padding: 25px;
+    padding: 22px;
   }
 
   .tagline {
@@ -235,9 +233,10 @@
   }
 
   .login-right {
-    padding: 25px;
-    padding-bottom: 40px;
+    padding: 22px;
+    padding-bottom: 35px;
   }
 }
+
 
 
