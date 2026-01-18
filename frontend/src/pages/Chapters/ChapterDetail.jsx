@@ -119,7 +119,7 @@ export default function ChapterDetail() {
   /* ================= UI (UNCHANGED) ================= */
   return (
     <div className="chapter-detail-wrapper">
-      <Header />
+      
 
       <section className="chapter-detail-header glass">
         <button className="back-btn" onClick={() => navigate(-1)}>
