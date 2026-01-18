@@ -218,14 +218,11 @@
   .login-card {
     width: 100%;
     height: auto;
+    overflow: visible;   /* ✅ allow content to show */
   }
 
   .login-left {
     padding: 25px;
-  }
-
-  .login-left h2 {
-    font-size: 18px;
   }
 
   .tagline {
@@ -234,27 +231,8 @@
 
   .login-right {
     padding: 25px;
-    padding-bottom: 40px; /* ✅ ensures Google button visible */
-  }
-
-  .login-right h1 {
-    font-size: 22px;
-  }
-
-  .subtitle {
-    font-size: 14px;
-  }
-
-  .login-form input {
-    font-size: 14px;
-  }
-
-  .login-btn {
-    font-size: 15px;
-  }
-
-  .bottom-text {
-    font-size: 13px;
+    padding-bottom: 40px;
   }
 }
+
 
