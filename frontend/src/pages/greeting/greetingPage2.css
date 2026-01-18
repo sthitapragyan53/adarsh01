@@ -120,55 +120,48 @@
 
   /* ===== RESPONSIVE FIX — DO NOT MODIFY EXISTING STYLES ABOVE ===== */
 
-@media (max-width: 1024px) {
-  .greeting-board {
-    transform: scale(0.85);
-  }
-}
-
+/* ===== MOBILE VERTICAL LAYOUT ===== */
 @media (max-width: 768px) {
+
   .greeting-board {
+    position: static;
     width: 100%;
     height: auto;
-    transform: scale(0.75);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: none;
+    padding: 20px 0;
   }
 
+  /* Remove absolute positioning on mobile */
   .pin-card {
-    width: 180px;
-    padding: 16px;
+    position: relative;
+    width: 85%;
+    margin: 0 auto;
   }
 
+  /* Reset individual card positions */
+  .blue,
+  .red,
+  .green,
+  .pink,
+  .mint {
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+
+  /* Center text */
   .greeting-text {
-    font-size: 18px;
     text-align: center;
+    font-size: 18px;
     padding: 0 20px;
   }
 
   .greeting-continue-btn {
     font-size: 15px;
-    padding: 12px 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .greeting-board {
-    transform: scale(0.6);
-  }
-
-  .pin-card {
-    width: 160px;
-    padding: 14px;
-  }
-
-  .pin-card h3 {
-    font-size: 16px;
-  }
-
-  .pin-card p {
-    font-size: 13px;
-  }
-
-  .greeting-text {
-    font-size: 16px;
+    padding: 12px 26px;
   }
 }
