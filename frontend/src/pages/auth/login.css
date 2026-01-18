@@ -186,27 +186,31 @@
 
 /* Tablet */
 @media (max-width: 768px) {
+  .login-page {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px 15px 40px;
+    min-height: auto;      /* 🔥 remove fixed height completely */
+  }
+
   .login-card {
-    flex-direction: column;
+    width: 100%;
     height: auto;
-    border-radius: 16px;
+    overflow: visible;
   }
 
   .login-left {
-    padding: 30px;
-    text-align: center;
-    align-items: center;
+    padding: 22px;
   }
 
   .tagline {
-    font-size: 20px;
-    max-width: 100%;
+    font-size: 18px;
   }
 
   .login-right {
-    padding: 30px;
-  }
-}
+    padding: 22px;
+    padding-bottom: 35px;
+  }}
 
 /* Mobile */
 
