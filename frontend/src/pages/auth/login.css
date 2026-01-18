@@ -217,7 +217,7 @@
     justify-content: flex-start;
     padding-top: 20px;
     padding-bottom: 40px;
-    min-height: auto;
+    min-height: 650px;
   }
 
   .login-card {
