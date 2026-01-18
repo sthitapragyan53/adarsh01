@@ -122,7 +122,7 @@ export default function Login() {
             }}
           >
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+              src= "https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
               alt="google"
               style={{ width: "18px", height: "18px" }}
             />
