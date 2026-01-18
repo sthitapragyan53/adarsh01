@@ -50,6 +50,7 @@ export default function SubjectResources() {
   if (loading) {
     return (
       <div style={{ padding: "100px" }}>
+        <Header />
         
         <p>Loading chapters...</p>
       </div>
