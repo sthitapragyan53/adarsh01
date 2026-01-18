@@ -71,6 +71,7 @@ export default function SubjectResources() {
   /* ================= UI ================= */
   return (
     <div className="subject-wrapper">
+      <Header />
       
 
       <div className="subject-header">
