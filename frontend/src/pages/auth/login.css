@@ -213,8 +213,11 @@
 @media (max-width: 480px) {
   .login-page {
     
-    padding-top: 30px;
-    padding-bottom: 30px;
+    align-items: flex-start;   /* move card to top */
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    min-height: auto;
   }
 
   .login-card {
