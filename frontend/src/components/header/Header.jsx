@@ -1,29 +1,29 @@
 import "./header.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Header() {
   const navigate = useNavigate();
 
   const [showHeader, setShowHeader] = useState(true);
-  let lastScrollY = window.scrollY;
+  const lastScrollY = useRef(window.scrollY);
 
-  // ✅ Hide / Show header on scroll
+  // Hide / Show header on scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
+      if (window.scrollY > lastScrollY.current) {
         setShowHeader(false); // scrolling down → hide
       } else {
         setShowHeader(true); // scrolling up → show
       }
-      lastScrollY = window.scrollY;
+      lastScrollY.current = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Logout
+  // Logout
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
