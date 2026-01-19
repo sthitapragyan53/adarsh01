@@ -1,116 +1,107 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./samplepaper.css"; // reuse same CSS
+import "./samplepaper.css";
 
-const examCards = [
+const cards = [
   {
-    id: 1,
-    exam: "JEE Main",
-    desc: "National level engineering entrance exam",
-    tags: ["Engineering", "NTA"],
-    route: "/exam/jee-main",
-    logo: "📘",
+    title: "Web Designer",
+    desc: "UI/UX and website design work.",
+    icon: "🎨",
+    price: "$85 - 120",
+    type: "Part-Time",
+    mode: "Remote",
+    time: "5 days ago",
   },
   {
-    id: 2,
-    exam: "JEE Advanced",
-    desc: "IIT admission entrance exam",
-    tags: ["IIT", "Advanced"],
-    route: "/exam/jee-advanced",
-    logo: "🚀",
+    title: "SEO Optimizer",
+    desc: "Improve search rankings.",
+    icon: "🔍",
+    price: "$60 - 100",
+    type: "Full-Time",
+    mode: "Remote",
+    time: "2 days ago",
   },
   {
-    id: 3,
-    exam: "Board Exam",
-    desc: "State & CBSE board examinations",
-    tags: ["School", "Boards"],
-    route: "/exam/boards",
-    logo: "🏫",
-  },
-  {
-    id: 4,
-    exam: "WBJEE",
-    desc: "West Bengal Engineering Exam",
-    tags: ["WB", "Engineering"],
-    route: "/exam/wbjee",
-    logo: "🧭",
-  },
-  {
-    id: 5,
-    exam: "OJEE",
-    desc: "Odisha Joint Entrance Exam",
-    tags: ["Odisha", "Engineering"],
-    route: "/exam/ojee",
-    logo: "🌍",
-  },
-  {
-    id: 6,
-    exam: "BITSAT",
-    desc: "Birla Institute Entrance Test",
-    tags: ["BITS", "Private"],
-    route: "/exam/bitsat",
-    logo: "💎",
-  },
-  {
-    id: 7,
-    exam: "KCET",
-    desc: "Karnataka Entrance Test",
-    tags: ["Karnataka", "Engineering"],
-    route: "/exam/kcet",
-    logo: "🏁",
+    title: "Content Creator",
+    desc: "Write engaging content.",
+    icon: "📝",
+    price: "$40 - 80",
+    type: "Part-Time",
+    mode: "On-site",
+    time: "1 day ago",
   },
 ];
 
-export default function ExamTrack() {
+export default function SamplePaper() {
+  const [selectedCard, setSelectedCard] = useState(null);
   const navigate = useNavigate();
 
   return (
-    <div className="roadmap-wrapper">
+    <>
+      <div className="page">
 
-      {/* Back */}
-      <button 
-        className="page-back-btn"
-        onClick={() => navigate("/dashboard")}
-      >
-        ← Back
-      </button>
-
-      {/* Heading */}
-      <h1 className="roadmap-title">Exam Tracker</h1>
-
-      {/* Card Grid */}
-      <div className="roadmap-grid">
-        {examCards.map((card) => (
-          <div
-            key={card.id}
-            className="roadmap-card"
-            onClick={() => navigate(card.route)}
+        {/* ===== Header with Back Button ===== */}
+        <div className="page-header">
+          <button 
+            className="page-back-btn"
+            onClick={() => navigate("/dashboard")}
           >
-            <div className="card-top">
-              <div className="card-logo">{card.logo}</div>
+            ← Back
+          </button>
+        </div>
+        {/* =================================== */}
+
+        <div className="grid">
+          {cards.map((card, index) => (
+            <div
+              className="glass-card"
+              key={index}
+              onClick={() => setSelectedCard(card)}
+            >
+              <div className="icon">{card.icon}</div>
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
+              <button>Learn more</button>
             </div>
-
-            <p className="company-name">{card.exam}</p>
-            <h3 className="role-name">{card.desc}</h3>
-
-            <div className="card-tags">
-              {card.tags.map((tag, i) => (
-                <span key={i}>{tag}</span>
-              ))}
-            </div>
-
-            <div className="card-divider"></div>
-
-            <div className="card-bottom">
-              <p>Tap to open</p>
-              <button className="apply-btn-small">
-                View Details →
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-    </div>
+      {/* ===== Modal ===== */}
+      {selectedCard && (
+        <div className="modal-overlay">
+          <div className="modal-card">
+            <button
+              className="close-btn"
+              onClick={() => setSelectedCard(null)}
+            >
+              ✖
+            </button>
+
+            <div className="modal-header">
+              <div className="logo">◉◉</div>
+              <span className="time">{selectedCard.time}</span>
+            </div>
+
+            <h2>{selectedCard.title}</h2>
+
+            <div className="tags">
+              <span>{selectedCard.type}</span>
+              <span>{selectedCard.mode}</span>
+            </div>
+
+            <div className="modal-footer">
+              <div>
+                <h3>{selectedCard.price}</h3>
+                <p>Per every hour</p>
+              </div>
+
+              <button className="apply-btn">Apply now</button>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* ================= */}
+    </>
   );
 }

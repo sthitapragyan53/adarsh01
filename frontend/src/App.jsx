@@ -13,6 +13,7 @@ import FlashCards from "./pages/flashCard/FlashCards";
 import Shortnotes from "./pages/shortnotes/Shortnotes";
 import RoadMap from "./pages/roadMap/RoadMap";
 import SamplePaper from "./pages/samplepaper/SamplePaper";
+import SamplePaper from "./pages/samplepaper/SamplePaper"
 
 
 

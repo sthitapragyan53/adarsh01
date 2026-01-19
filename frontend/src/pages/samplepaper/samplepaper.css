@@ -1,15 +1,17 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: #f5f6f8;
+  background: #f8fafc;
+  color: #1a1a1b;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Wrapper */
-.roadmap-wrapper {
-  padding: 40px 60px;
+
+
+.page-header {
+  margin-bottom: 25px;
 }
 
-/* Back Button */
 .page-back-btn {
   background: #111;
   color: white;
@@ -18,126 +20,255 @@ body {
   border-radius: 10px;
   font-size: 13px;
   cursor: pointer;
-  margin-bottom: 20px;
+  transition: 0.2s;
 }
 
 .page-back-btn:hover {
   background: #000;
+  transform: translateX(-3px);
 }
 
-/* Heading */
-.roadmap-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 40px;
+
+/* ---------------- Grid Layout ---------------- */
+
+.page {
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* Grid */
-.roadmap-grid {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 26px;
+  gap: 24px;
 }
 
-/* Card */
-.roadmap-card {
-  background: white;
+/* ---------------- Premium Glass Cards ---------------- */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 22px;
-  padding: 22px;
+  padding: 26px;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-  transition: 0.3s ease;
+
+  box-shadow:
+    0 6px 10px rgba(0, 0, 0, 0.03),
+    0 18px 35px rgba(0, 0, 0, 0.06);
+
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.roadmap-card:hover {
-  transform: translateY(-6px);
+.glass-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 12px 20px rgba(0, 0, 0, 0.05),
+    0 25px 50px rgba(0, 0, 0, 0.08);
 }
 
-/* Completed State */
-.roadmap-card.completed {
-  border: 2px solid #111;
+.icon {
+  font-size: 26px;
+  margin-bottom: 12px;
 }
 
-/* Card Top */
-.card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.glass-card h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.card-logo {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #f1f1f1;
+.glass-card p {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.glass-card button {
+  border: none;
+  background: #111;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.glass-card button:hover {
+  background: #000;
+}
+
+/* ---------------- Modal Overlay ---------------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  z-index: 50;
 }
 
-.save-status {
-  font-size: 11px;
-  background: #f2f2f2;
-  padding: 4px 8px;
-  border-radius: 6px;
+/* ---------------- Premium Modal Card ---------------- */
+
+.modal-card {
+  background-image:
+    radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+    linear-gradient(135deg, #ffb703, #fb8500, #f77f00);
+
+  background-size: 18px 18px, cover;
+  color: #ffffff;
+  width: 420px;
+  padding: 34px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 25px rgba(247,127,0,0.25),
+    0 30px 60px rgba(0,0,0,0.35);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  animation: slideUp 0.45s cubic-bezier(0.165,0.84,0.44,1);
 }
 
-/* Text */
-.company-name {
-  font-size: 12px;
-  margin-top: 12px;
-  color: #777;
+/* Glass highlight overlay */
+.modal-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255,255,255,0.35),
+    transparent 60%
+  );
+  pointer-events: none;
 }
 
-.role-name {
-  font-size: 15px;
-  margin: 4px 0 10px;
-}
+/* Close Button */
 
-/* Tags */
-.card-tags {
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
   display: flex;
-  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  backdrop-filter: blur(6px);
 }
 
-.card-tags span {
-  background: #f4f4f4;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 10px;
+.close-btn:hover {
+  background: rgba(255,255,255,0.3);
+  transform: rotate(90deg);
 }
 
-/* Divider */
-.card-divider {
-  margin: 18px 0;
-  height: 1px;
-  background: #eee;
-}
+/* Header */
 
-/* Bottom */
-.card-bottom {
+.modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 18px;
+  opacity: 0.9;
 }
 
-.card-bottom strong {
-  font-size: 14px;
+.logo {
+  font-weight: 700;
+  font-size: 18px;
 }
 
-.card-bottom p {
+.time {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Title */
+
+.modal-card h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+
+/* Tags */
+
+.tags {
+  display: flex;
+  gap: 10px;
+}
+
+.tags span {
+  background: rgba(255,255,255,0.18);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+}
+
+/* Footer */
+
+.modal-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  padding-top: 22px;
+}
+
+.modal-footer h3 {
   margin: 0;
-  font-size: 11px;
-  color: #777;
+  font-size: 22px;
+  font-weight: 700;
 }
 
-.apply-btn-small {
-  background: #111;
-  color: white;
+.modal-footer p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+/* Button */
+
+.apply-btn {
+  background: #ffffff;
+  color: #111;
   border: none;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 11px;
+  padding: 12px 26px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
+.apply-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255,255,255,0.35);
+}
+
+/* Animations */
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
