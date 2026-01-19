@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #1e1e1e;
+  color: white;
+}
+
+/* Page Layout */
+
+.roadmap-page {
+  padding: 40px;
+}
+
+.roadmap-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+/* Main Container */
+
+.roadmap-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Tracker */
+
+.roadmap-tracker {
+  position: relative;
+}
+
+.tracker-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* Circles */
+
+.tracker-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #666;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.tracker-circle.active {
+  border-color: white;
+  box-shadow: 0 0 10px white;
+}
+
+.tracker-circle.checked {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+/* Vertical Line */
+
+.tracker-line {
+  position: absolute;
+  left: 10px;
+  top: 28px;
+  width: 2px;
+  height: 30px;
+  background: #555;
+}
+
+/* Text */
+
+.tracker-text p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.tracker-text span {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* Checkbox */
+
+.tracker-item input {
+  accent-color: white;
+}
+
+/* Content Box */
+
+.roadmap-content {
+  background: radial-gradient(circle at top right, #2b2b2b, #000);
+  padding: 30px;
+  border-radius: 18px;
+  min-width: 300px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  font-size: 15px;
+}
