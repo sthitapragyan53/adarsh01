@@ -10,6 +10,7 @@ import ChapterDetail from "./pages/Chapters/ChapterDetail";
 import Dashboard from "./pages/dashboard/Dashboard";
 import ExamDashboard from "./pages/test/ExamDashboard";
 import FlashCards from "./pages/flashCard/FlashCards";
+import Shortnotes from "./pages/shortnotes/Shortnotes";
 import RoadMap from "./pages/roadMap/RoadMap";
 
 
@@ -95,6 +96,7 @@ function App() {
         <Route path="/exam-dashboard" element={<ExamDashboard />} />
         <Route path="/flashcards" element={<FlashCards />} />
         <Route path="/roadmap" element={<RoadMap />} />
+        <Route path="/shortnotes" element={<Shortnotes />} />
 
 
        
