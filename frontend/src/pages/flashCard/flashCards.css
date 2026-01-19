@@ -1,12 +1,105 @@
-/* ---------- Premium Modal Card ---------- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+  color: #1a1a1b;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- Grid Layout ---------------- */
+
+.page {
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* ---------------- Premium Glass Cards ---------------- */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 22px;
+  padding: 26px;
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 10px rgba(0, 0, 0, 0.03),
+    0 18px 35px rgba(0, 0, 0, 0.06);
+
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 12px 20px rgba(0, 0, 0, 0.05),
+    0 25px 50px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.glass-card h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.glass-card p {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.glass-card button {
+  border: none;
+  background: #111;
+  color: white;
+  padding: 7px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.glass-card button:hover {
+  background: #000;
+}
+
+/* ---------------- Modal Overlay ---------------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+/* ---------------- Premium Modal Card ---------------- */
 
 .modal-card {
-  background: linear-gradient(
-    135deg,
-    #ffb703 0%,
-    #fb8500 45%,
-    #f77f00 100%
-  );
+  background-image:
+    radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+    linear-gradient(135deg, #ffb703, #fb8500, #f77f00);
+
+  background-size: 18px 18px, cover;
   color: #ffffff;
   width: 420px;
   padding: 34px;
@@ -14,17 +107,16 @@
   position: relative;
   overflow: hidden;
 
-  /* Premium depth */
   box-shadow:
-    0 10px 25px rgba(247, 127, 0, 0.25),
-    0 30px 60px rgba(0, 0, 0, 0.35);
+    0 10px 25px rgba(247,127,0,0.25),
+    0 30px 60px rgba(0,0,0,0.35);
 
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255,255,255,0.25);
 
-  animation: slideUp 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation: slideUp 0.45s cubic-bezier(0.165,0.84,0.44,1);
 }
 
-/* Subtle glass highlight overlay */
+/* Glass highlight overlay */
 .modal-card::before {
   content: "";
   position: absolute;
@@ -37,7 +129,7 @@
   pointer-events: none;
 }
 
-/* ---------- Close Button ---------- */
+/* Close Button */
 
 .close-btn {
   position: absolute;
@@ -63,7 +155,7 @@
   transform: rotate(90deg);
 }
 
-/* ---------- Header ---------- */
+/* Header */
 
 .modal-header {
   display: flex;
@@ -76,7 +168,6 @@
 .logo {
   font-weight: 700;
   font-size: 18px;
-  letter-spacing: -0.5px;
 }
 
 .time {
@@ -84,16 +175,15 @@
   opacity: 0.8;
 }
 
-/* ---------- Title ---------- */
+/* Title */
 
 .modal-card h2 {
   font-size: 28px;
   font-weight: 700;
   margin: 0 0 18px;
-  letter-spacing: -0.6px;
 }
 
-/* ---------- Tags ---------- */
+/* Tags */
 
 .tags {
   display: flex;
@@ -111,7 +201,7 @@
   backdrop-filter: blur(6px);
 }
 
-/* ---------- Footer ---------- */
+/* Footer */
 
 .modal-footer {
   margin-top: 30px;
@@ -134,7 +224,7 @@
   opacity: 0.85;
 }
 
-/* ---------- Button ---------- */
+/* Button */
 
 .apply-btn {
   background: #ffffff;
@@ -151,4 +241,11 @@
 .apply-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(255,255,255,0.35);
+}
+
+/* Animations */
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
