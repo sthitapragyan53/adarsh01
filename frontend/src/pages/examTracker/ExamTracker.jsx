@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import "./examTracker.css";
 
 // Import logos
-import jeeMain from "../assets/exams/jee-main.png";
-import jeeAdvanced from "../assets/exams/jee-advanced.png";
-import boards from "../assets/exams/boards.png";
-import wbjee from "../assets/exams/wbjee.png";
-import ojee from "../assets/exams/ojee.png";
+import jeeMain from "../../assets/exams/jee-main.png";
+import jeeAdvanced from "../../assets/exams/jee-advanced.png";
+import boards from "../../assets/exams/boards.png";
+import wbjee from "../../assets/exams/wbjee.png";
+import ojee from "../../assets/exams/ojee.png";
+
+
 
 
 const examCards = [
