@@ -6,6 +6,29 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+
+
+.page-header {
+  margin-bottom: 25px;
+}
+
+.page-back-btn {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.page-back-btn:hover {
+  background: #000;
+  transform: translateX(-3px);
+}
+
+
 /* ---------------- Grid Layout ---------------- */
 
 .page {

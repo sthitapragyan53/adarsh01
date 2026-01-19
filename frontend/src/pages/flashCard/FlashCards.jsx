@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./flashCards.css";
 
 const cards = [
@@ -33,10 +34,23 @@ const cards = [
 
 export default function FlashCards() {
   const [selectedCard, setSelectedCard] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <>
       <div className="page">
+
+        {/* ===== Header with Back Button ===== */}
+        <div className="page-header">
+          <button 
+            className="page-back-btn"
+            onClick={() => navigate("/dashboard")}
+          >
+            ← Back
+          </button>
+        </div>
+        {/* =================================== */}
+
         <div className="grid">
           {cards.map((card, index) => (
             <div
@@ -53,7 +67,7 @@ export default function FlashCards() {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* ===== Modal ===== */}
       {selectedCard && (
         <div className="modal-overlay">
           <div className="modal-card">
@@ -87,6 +101,7 @@ export default function FlashCards() {
           </div>
         </div>
       )}
+      {/* ================= */}
     </>
   );
 }
