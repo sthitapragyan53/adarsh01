@@ -2,192 +2,106 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./samplepaper.css";
 
-const samplepaper = [
+const cards = [
   {
-    id: 1,
-    company: "Amazon",
-    role: "Senior UI/UX Designer",
-    type: ["Part-Time", "Senior Level"],
-    price: "$120/hr",
-    location: "Mumbai, India",
-    logo: "🅰️",
+    title: "Web Designer",
+    desc: "UI/UX and website design work.",
+    icon: "🎨",
+    price: "$85 - 120",
+    type: "Part-Time",
+    mode: "Remote",
+    time: "5 days ago",
   },
   {
-    id: 2,
-    company: "Google",
-    role: "Graphic Designer",
-    type: ["Part-Time", "Flexible Schedule"],
-    price: "$150 - 220k",
-    location: "Kochi, India",
-    logo: "🅶",
+    title: "SEO Optimizer",
+    desc: "Improve search rankings.",
+    icon: "🔍",
+    price: "$60 - 100",
+    type: "Full-Time",
+    mode: "Remote",
+    time: "2 days ago",
   },
   {
-    id: 3,
-    company: "Dribbble",
-    role: "Senior Motion Designer",
-    type: ["Contract", "Remote"],
-    price: "$85/hr",
-    location: "Chennai, India",
-    logo: "🏀",
-  },
-  {
-    id: 4,
-    company: "Figma",
-    role: "UX Designer",
-    type: ["Full-Time", "In office"],
-    price: "$200 - 250k",
-    location: "Bangalore, India",
-    logo: "🎨",
-  },
-  {
-    id: 5,
-    company: "Airbnb",
-    role: "Junior UI/UX Designer",
-    type: ["Contract", "Remote"],
-    price: "$100/hr",
-    location: "Delhi, India",
-    logo: "🏠",
-  },
-  {
-    id: 6,
-    company: "Apple",
-    role: "Graphic Designer",
-    type: ["Full-Time", "Flexible Schedule"],
-    price: "$85 - 120k",
-    location: "Kerala, India",
-    logo: "🍎",
+    title: "Content Creator",
+    desc: "Write engaging content.",
+    icon: "📝",
+    price: "$40 - 80",
+    type: "Part-Time",
+    mode: "On-site",
+    time: "1 day ago",
   },
 ];
 
-export default function RoadMap() {
+export default function SamplePaper() {
+  const [selectedCard, setSelectedCard] = useState(null);
   const navigate = useNavigate();
 
-  const [completed, setCompleted] = useState([]);
-  const [activeCard, setActiveCard] = useState(null);
-  const [checkedStep, setCheckedStep] = useState(false);
-
-  function toggleComplete(id) {
-    setCompleted((prev) =>
-      prev.includes(id)
-        ? prev.filter((c) => c !== id)
-        : [...prev, id]
-    );
-  }
-
   return (
-    <div className="roadmap-wrapper">
+    <>
+      <div className="page">
 
-      {/* Back */}
-      <button 
-        className="page-back-btn"
-        onClick={() => navigate("/dashboard")}
-      >
-        ← Back
-      </button>
-
-      {/* Heading */}
-      <h1 className="roadmap-title">Road Map</h1>
-
-      {/* ===== Card Grid (UNCHANGED UI) ===== */}
-      <div className="roadmap-grid">
-        {samplepaper.map((card) => (
-          <div
-            key={card.id}
-            className={`roadmap-card ${
-              completed.includes(card.id) ? "completed" : ""
-            }`}
-            onClick={() => {
-              setActiveCard(card);
-              setCheckedStep(completed.includes(card.id));
-            }}
+        {/* ===== Header with Back Button ===== */}
+        <div className="page-header">
+          <button 
+            className="page-back-btn"
+            onClick={() => navigate("/dashboard")}
           >
-            <div className="card-top">
-              <div className="card-logo">{card.logo}</div>
-              <div className="save-status">
-                {completed.includes(card.id) ? "Saved ✓" : "Save"}
-              </div>
+            ← Back
+          </button>
+        </div>
+        {/* =================================== */}
+
+        <div className="grid">
+          {cards.map((card, index) => (
+            <div
+              className="glass-card"
+              key={index}
+              onClick={() => setSelectedCard(card)}
+            >
+              <div className="icon">{card.icon}</div>
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
+              <button>Learn more</button>
             </div>
-
-            <p className="company-name">{card.company}</p>
-            <h3 className="role-name">{card.role}</h3>
-
-            <div className="card-tags">
-              {card.type.map((t, i) => (
-                <span key={i}>{t}</span>
-              ))}
-            </div>
-
-            <div className="card-divider"></div>
-
-            <div className="card-bottom">
-              <div>
-                <strong>{card.price}</strong>
-                <p>{card.location}</p>
-              </div>
-              <button className="apply-btn-small">
-                Apply now
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* ===== Popup Roadmap Modal ===== */}
-      {activeCard && (
+      {/* ===== Modal ===== */}
+      {selectedCard && (
         <div className="modal-overlay">
-          <div className="nav-modal-card">
-
-            {/* Close */}
-            <button 
+          <div className="modal-card">
+            <button
               className="close-btn"
-              onClick={() => setActiveCard(null)}
+              onClick={() => setSelectedCard(null)}
             >
               ✖
             </button>
 
-            {/* ===== Navigation Style Roadmap ===== */}
-            <div className="map-ui">
-              <div className="map-left">
-                <div className="dot filled"></div>
-                <div className="dashed-line"></div>
-                <div className="dot ring"></div>
-                <div className="dashed-line"></div>
-                <div className="dot filled"></div>
-              </div>
-
-              <div className="map-text">
-                <p className="map-title">Your Destination</p>
-                <p className="map-step">
-                  Turn Right in <strong>220M</strong>
-                </p>
-                <p className="map-speed">80 km/h</p>
-              </div>
-
-              <div className="map-route"></div>
+            <div className="modal-header">
+              <div className="logo">◉◉</div>
+              <span className="time">{selectedCard.time}</span>
             </div>
 
-            {/* ===== Card Info + Checkbox ===== */}
-            <div className="nav-info">
-              <h2>{activeCard.role}</h2>
-              <p>
-                Navigate with precision using real-time roadmap guidance.
-              </p>
+            <h2>{selectedCard.title}</h2>
 
-              <label className="check-row">
-                <input
-                  type="checkbox"
-                  checked={checkedStep}
-                  onChange={() => {
-                    setCheckedStep(!checkedStep);
-                    toggleComplete(activeCard.id);
-                  }}
-                />
-                Mark this step as completed
-              </label>
+            <div className="tags">
+              <span>{selectedCard.type}</span>
+              <span>{selectedCard.mode}</span>
+            </div>
+
+            <div className="modal-footer">
+              <div>
+                <h3>{selectedCard.price}</h3>
+                <p>Per every hour</p>
+              </div>
+
+              <button className="apply-btn">Apply now</button>
             </div>
           </div>
         </div>
       )}
-    </div>
+      {/* ================= */}
+    </>
   );
 }
