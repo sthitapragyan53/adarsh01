@@ -1,5 +1,6 @@
 import React from "react";
 import "./flashCards.css";
+import { useNavigate } from "react-router-dom";
 
 const cards = [
   { title: "Hnbl Tone Analyzer", desc: "Analyze your writing tone instantly." },

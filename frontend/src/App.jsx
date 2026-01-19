@@ -9,7 +9,11 @@ import SubjectResources from "./pages/Chapters/SubjectResources";
 import ChapterDetail from "./pages/Chapters/ChapterDetail";
 import Dashboard from "./pages/dashboard/Dashboard";
 import ExamDashboard from "./pages/test/ExamDashboard";
+import FlashCards from "./pages/flashCard/FlashCards";
+
+
 import GoogleSuccess from "./pages/auth/GoogleSuccess";
+
 
 
 
@@ -86,7 +90,9 @@ function App() {
 
          {/* ===== DASHBOARD ===== */}
         <Route path="/dashboard" element={<Dashboard />} />
+        
         <Route path="/exam-dashboard" element={<ExamDashboard />} />
+        <Route path="/flashCards" element={<FlashCards />} />
       </Routes>
     </BrowserRouter>
   );
