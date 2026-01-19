@@ -209,7 +209,7 @@ export default function Dashboard() {
 
             <button
               className="action-btn roadmap"
-              onClick={() => navigate("/roadMap")}
+              onClick={() => navigate("/roadmaps")}
             >
               🧭 Roadmap
               <span>Step-by-step plan</span>
