@@ -94,7 +94,7 @@ function App() {
         
         <Route path="/exam-dashboard" element={<ExamDashboard />} />
         <Route path="/flashCards" element={<FlashCards />} />
-        <Route path="/roadMap" element={<RoadMap />} />
+        <Route path="/roadmap" element={<RoadMap />} />
       </Routes>
     </BrowserRouter>
   );
