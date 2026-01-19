@@ -61,7 +61,10 @@ const roadmapCards = [
 
 export default function RoadMap() {
   const navigate = useNavigate();
+
   const [completed, setCompleted] = useState([]);
+  const [activeCard, setActiveCard] = useState(null);
+  const [checkedStep, setCheckedStep] = useState(false);
 
   function toggleComplete(id) {
     setCompleted((prev) =>
@@ -85,7 +88,7 @@ export default function RoadMap() {
       {/* Heading */}
       <h1 className="roadmap-title">Road Map</h1>
 
-      {/* Cards Grid */}
+      {/* ===== Card Grid (UNCHANGED UI) ===== */}
       <div className="roadmap-grid">
         {roadmapCards.map((card) => (
           <div
@@ -93,9 +96,11 @@ export default function RoadMap() {
             className={`roadmap-card ${
               completed.includes(card.id) ? "completed" : ""
             }`}
-            onClick={() => toggleComplete(card.id)}
+            onClick={() => {
+              setActiveCard(card);
+              setCheckedStep(completed.includes(card.id));
+            }}
           >
-            {/* Top Section */}
             <div className="card-top">
               <div className="card-logo">{card.logo}</div>
               <div className="save-status">
@@ -103,21 +108,17 @@ export default function RoadMap() {
               </div>
             </div>
 
-            {/* Company + Role */}
             <p className="company-name">{card.company}</p>
             <h3 className="role-name">{card.role}</h3>
 
-            {/* Tags */}
             <div className="card-tags">
               {card.type.map((t, i) => (
                 <span key={i}>{t}</span>
               ))}
             </div>
 
-            {/* Divider */}
             <div className="card-divider"></div>
 
-            {/* Bottom Section */}
             <div className="card-bottom">
               <div>
                 <strong>{card.price}</strong>
@@ -130,6 +131,63 @@ export default function RoadMap() {
           </div>
         ))}
       </div>
+
+      {/* ===== Popup Roadmap Modal ===== */}
+      {activeCard && (
+        <div className="modal-overlay">
+          <div className="nav-modal-card">
+
+            {/* Close */}
+            <button 
+              className="close-btn"
+              onClick={() => setActiveCard(null)}
+            >
+              ✖
+            </button>
+
+            {/* ===== Navigation Style Roadmap ===== */}
+            <div className="map-ui">
+              <div className="map-left">
+                <div className="dot filled"></div>
+                <div className="dashed-line"></div>
+                <div className="dot ring"></div>
+                <div className="dashed-line"></div>
+                <div className="dot filled"></div>
+              </div>
+
+              <div className="map-text">
+                <p className="map-title">Your Destination</p>
+                <p className="map-step">
+                  Turn Right in <strong>220M</strong>
+                </p>
+                <p className="map-speed">80 km/h</p>
+              </div>
+
+              <div className="map-route"></div>
+            </div>
+
+            {/* ===== Card Info + Checkbox ===== */}
+            <div className="nav-info">
+              <h2>{activeCard.role}</h2>
+              <p>
+                Navigate with precision using real-time roadmap guidance.
+              </p>
+
+              <label className="check-row">
+                <input
+                  type="checkbox"
+                  checked={checkedStep}
+                  onChange={() => {
+                    setCheckedStep(!checkedStep);
+                    toggleComplete(activeCard.id);
+                  }}
+                />
+                Mark this step as completed
+              </label>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
