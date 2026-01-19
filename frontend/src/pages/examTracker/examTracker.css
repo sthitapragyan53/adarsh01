@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f5f6f8;
+}
+
+/* Wrapper */
+.roadmap-wrapper {
+  padding: 40px 60px;
+}
+
+/* Back Button */
+.page-back-btn {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.page-back-btn:hover {
+  background: #000;
+}
+
+/* Heading */
+.roadmap-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+/* Card */
+.roadmap-card {
+  background: white;
+  border-radius: 22px;
+  padding: 22px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Completed State */
+.roadmap-card.completed {
+  border: 2px solid #111;
+}
+
+/* Card Top */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.save-status {
+  font-size: 11px;
+  background: #f2f2f2;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Text */
+.company-name {
+  font-size: 12px;
+  margin-top: 12px;
+  color: #777;
+}
+
+.role-name {
+  font-size: 15px;
+  margin: 4px 0 10px;
+}
+
+/* Tags */
+.card-tags {
+  display: flex;
+  gap: 6px;
+}
+
+.card-tags span {
+  background: #f4f4f4;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+}
+
+/* Divider */
+.card-divider {
+  margin: 18px 0;
+  height: 1px;
+  background: #eee;
+}
+
+/* Bottom */
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-bottom strong {
+  font-size: 14px;
+}
+
+.card-bottom p {
+  margin: 0;
+  font-size: 11px;
+  color: #777;
+}
+
+.apply-btn-small {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+

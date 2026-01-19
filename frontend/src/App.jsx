@@ -13,7 +13,8 @@ import FlashCards from "./pages/flashCard/FlashCards";
 import Shortnotes from "./pages/shortnotes/Shortnotes";
 import RoadMap from "./pages/roadMap/RoadMap";
 import SamplePaper from "./pages/samplepaper/SamplePaper";
-import SamplePaper from "./pages/samplepaper/SamplePaper"
+import ExamTrack from "./pages/examTracker/ExamTracker";
+
 
 
 
@@ -101,6 +102,8 @@ function App() {
         <Route path="/roadmap" element={<RoadMap />} />
         <Route path="/shortnotes" element={<Shortnotes />} />
         <Route path="/sample-papers" element={<SamplePaper />} />
+        <Route path="/exam-tracker" element={<ExamTrack />} />
+
 
 
        
