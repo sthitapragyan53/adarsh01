@@ -2,90 +2,133 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./roadMap.css";
 
-const roadmapSteps = [
+const roadmapCards = [
   {
     id: 1,
-    title: "Destination",
-    content: "Final project deployment and launch."
+    company: "Amazon",
+    role: "Senior UI/UX Designer",
+    type: ["Part-Time", "Senior Level"],
+    price: "$120/hr",
+    location: "Mumbai, India",
+    logo: "🅰️",
   },
   {
     id: 2,
-    title: "Turn left in 300M",
-    subtitle: "St. Peter Street",
-    content: "Complete UI Design and Layout structure."
+    company: "Google",
+    role: "Graphic Designer",
+    type: ["Part-Time", "Flexible Schedule"],
+    price: "$150 - 220k",
+    location: "Kochi, India",
+    logo: "🅶",
   },
   {
     id: 3,
-    title: "56 km/h",
-    content: "Develop core React components."
+    company: "Dribbble",
+    role: "Senior Motion Designer",
+    type: ["Contract", "Remote"],
+    price: "$85/hr",
+    location: "Chennai, India",
+    logo: "🏀",
   },
   {
     id: 4,
-    title: "20 minutes",
-    content: "Integrate APIs and finalize features."
-  }
+    company: "Figma",
+    role: "UX Designer",
+    type: ["Full-Time", "In office"],
+    price: "$200 - 250k",
+    location: "Bangalore, India",
+    logo: "🎨",
+  },
+  {
+    id: 5,
+    company: "Airbnb",
+    role: "Junior UI/UX Designer",
+    type: ["Contract", "Remote"],
+    price: "$100/hr",
+    location: "Delhi, India",
+    logo: "🏠",
+  },
+  {
+    id: 6,
+    company: "Apple",
+    role: "Graphic Designer",
+    type: ["Full-Time", "Flexible Schedule"],
+    price: "$85 - 120k",
+    location: "Kerala, India",
+    logo: "🍎",
+  },
 ];
 
 export default function RoadMap() {
-  const [activeStep, setActiveStep] = useState(1);
-  const [checkedSteps, setCheckedSteps] = useState([]);
+  const navigate = useNavigate();
+  const [completed, setCompleted] = useState([]);
 
-  function toggleCheck(id) {
-    setCheckedSteps((prev) =>
-      prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]
+  function toggleComplete(id) {
+    setCompleted((prev) =>
+      prev.includes(id)
+        ? prev.filter((c) => c !== id)
+        : [...prev, id]
     );
   }
 
   return (
-    <div className="roadmap-page">
+    <div className="roadmap-wrapper">
 
-      {/* Page Heading */}
+      {/* Back */}
+      <button 
+        className="page-back-btn"
+        onClick={() => navigate("/dashboard")}
+      >
+        ← Back
+      </button>
+
+      {/* Heading */}
       <h1 className="roadmap-title">Road Map</h1>
 
-      <div className="roadmap-container">
-
-        {/* ===== Left Progress Tracker ===== */}
-        <div className="roadmap-tracker">
-          {roadmapSteps.map((step, index) => (
-            <div key={step.id} className="tracker-item">
-
-              {/* Circle */}
-              <div
-                className={`tracker-circle 
-                  ${activeStep === step.id ? "active" : ""}
-                  ${checkedSteps.includes(step.id) ? "checked" : ""}
-                `}
-                onClick={() => setActiveStep(step.id)}
-              >
-                {checkedSteps.includes(step.id) && "✓"}
+      {/* Cards Grid */}
+      <div className="roadmap-grid">
+        {roadmapCards.map((card) => (
+          <div
+            key={card.id}
+            className={`roadmap-card ${
+              completed.includes(card.id) ? "completed" : ""
+            }`}
+            onClick={() => toggleComplete(card.id)}
+          >
+            {/* Top Section */}
+            <div className="card-top">
+              <div className="card-logo">{card.logo}</div>
+              <div className="save-status">
+                {completed.includes(card.id) ? "Saved ✓" : "Save"}
               </div>
-
-              {/* Line */}
-              {index !== roadmapSteps.length - 1 && <div className="tracker-line"></div>}
-
-              {/* Label */}
-              <div className="tracker-text">
-                <p>{step.title}</p>
-                {step.subtitle && <span>{step.subtitle}</span>}
-              </div>
-
-              {/* Check Toggle */}
-              <input
-                type="checkbox"
-                checked={checkedSteps.includes(step.id)}
-                onChange={() => toggleCheck(step.id)}
-              />
             </div>
-          ))}
-        </div>
 
-        {/* ===== Right Content Section ===== */}
-        <div className="roadmap-content">
-          {
-            roadmapSteps.find((s) => s.id === activeStep)?.content
-          }
-        </div>
+            {/* Company + Role */}
+            <p className="company-name">{card.company}</p>
+            <h3 className="role-name">{card.role}</h3>
 
+            {/* Tags */}
+            <div className="card-tags">
+              {card.type.map((t, i) => (
+                <span key={i}>{t}</span>
+              ))}
+            </div>
+
+            {/* Divider */}
+            <div className="card-divider"></div>
+
+            {/* Bottom Section */}
+            <div className="card-bottom">
+              <div>
+                <strong>{card.price}</strong>
+                <p>{card.location}</p>
+              </div>
+              <button className="apply-btn-small">
+                Apply now
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
