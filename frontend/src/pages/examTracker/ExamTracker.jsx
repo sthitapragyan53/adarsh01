@@ -1,6 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./examTracker.css"; // reuse same CSS
+import "./examTracker.css";
+
+// Import logos
+import jeeMain from "../assets/exams/jee-main.png";
+import jeeAdvanced from "../assets/exams/jee-advanced.png";
+import boards from "../assets/exams/boards.png";
+import wbjee from "../assets/exams/wbjee.png";
+import ojee from "../assets/exams/ojee.png";
+
 
 const examCards = [
   {
@@ -9,7 +17,7 @@ const examCards = [
     desc: "National level engineering entrance exam",
     tags: ["Engineering", "NTA"],
     route: "/exam/jee-main",
-    logo: "📘",
+    logo: jeeMain,
   },
   {
     id: 2,
@@ -17,7 +25,7 @@ const examCards = [
     desc: "IIT admission entrance exam",
     tags: ["IIT", "Advanced"],
     route: "/exam/jee-advanced",
-    logo: "🚀",
+    logo: jeeAdvanced,
   },
   {
     id: 3,
@@ -25,7 +33,7 @@ const examCards = [
     desc: "State & CBSE board examinations",
     tags: ["School", "Boards"],
     route: "/exam/boards",
-    logo: "🏫",
+    logo: boards,
   },
   {
     id: 4,
@@ -33,7 +41,7 @@ const examCards = [
     desc: "West Bengal Engineering Exam",
     tags: ["WB", "Engineering"],
     route: "/exam/wbjee",
-    logo: "🧭",
+    logo: wbjee,
   },
   {
     id: 5,
@@ -41,24 +49,9 @@ const examCards = [
     desc: "Odisha Joint Entrance Exam",
     tags: ["Odisha", "Engineering"],
     route: "/exam/ojee",
-    logo: "🌍",
+    logo: ojee,
   },
-  {
-    id: 6,
-    exam: "BITSAT",
-    desc: "Birla Institute Entrance Test",
-    tags: ["BITS", "Private"],
-    route: "/exam/bitsat",
-    logo: "💎",
-  },
-  {
-    id: 7,
-    exam: "KCET",
-    desc: "Karnataka Entrance Test",
-    tags: ["Karnataka", "Engineering"],
-    route: "/exam/kcet",
-    logo: "🏁",
-  },
+  
 ];
 
 export default function ExamTrack() {
@@ -67,8 +60,8 @@ export default function ExamTrack() {
   return (
     <div className="roadmap-wrapper">
 
-      {/* Back */}
-      <button 
+      {/* Back Button */}
+      <button
         className="page-back-btn"
         onClick={() => navigate("/dashboard")}
       >
@@ -78,7 +71,7 @@ export default function ExamTrack() {
       {/* Heading */}
       <h1 className="roadmap-title">Exam Tracker</h1>
 
-      {/* Card Grid */}
+      {/* Cards */}
       <div className="roadmap-grid">
         {examCards.map((card) => (
           <div
@@ -87,7 +80,9 @@ export default function ExamTrack() {
             onClick={() => navigate(card.route)}
           >
             <div className="card-top">
-              <div className="card-logo">{card.logo}</div>
+              <div className="card-logo">
+                <img src={card.logo} alt={card.exam} />
+              </div>
             </div>
 
             <p className="company-name">{card.exam}</p>
