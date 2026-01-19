@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./roadmap.css";
+import "./roadMap.css";
 
 const roadmapSteps = [
   {
