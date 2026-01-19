@@ -10,7 +10,7 @@ import ChapterDetail from "./pages/Chapters/ChapterDetail";
 import Dashboard from "./pages/dashboard/Dashboard";
 import ExamDashboard from "./pages/test/ExamDashboard";
 import FlashCards from "./pages/flashCard/FlashCards";
-import RoadMap from "./pages/roadMap/RoadMap";
+
 
 
 import GoogleSuccess from "./pages/auth/GoogleSuccess";
@@ -94,7 +94,7 @@ function App() {
         
         <Route path="/exam-dashboard" element={<ExamDashboard />} />
         <Route path="/flashCards" element={<FlashCards />} />
-        <Route path="/roadmaps" element={<RoadMap />} />
+       
       </Routes>
     </BrowserRouter>
   );
