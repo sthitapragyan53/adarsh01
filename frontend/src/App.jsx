@@ -92,10 +92,10 @@ function App() {
 
          {/* ===== DASHBOARD ===== */}
         <Route path="/dashboard" element={<Dashboard />} />
-        
         <Route path="/exam-dashboard" element={<ExamDashboard />} />
-        <Route path="/flashCards" element={<FlashCards />} />
-        <Route path="/roadmaps" element={< RoadMap />} />
+        <Route path="/flashcards" element={<FlashCards />} />
+        <Route path="/roadmap" element={<RoadMap />} />
+
 
        
       </Routes>
