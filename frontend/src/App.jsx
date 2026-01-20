@@ -27,6 +27,11 @@ import JeeMainChapterDetail from "./pages/jeeMains/JeeMainChapterDetail";
 import JeeAdvance from "./pages/jeeAdvance/jeeAdvance";
 
 
+///// WBjee //////
+import WBJEE from "./pages/WBJEE/Wbjee";
+
+
+
 
 
 
@@ -158,6 +163,15 @@ function App() {
   }
 />
 
+{/* =====  Wbjee  ===== */}
+<Route
+  path="/exam/wbjee"
+  element={
+    <ProtectedRoute>
+      <WBJEE />
+    </ProtectedRoute>
+  }
+/>
 
 
 
