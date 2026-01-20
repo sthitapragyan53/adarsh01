@@ -24,7 +24,7 @@ import JeeMainChapterDetail from "./pages/jeeMains/JeeMainChapterDetail";
 
 ///// jee Advance //////
 
-import JeeAdvance from "./pages/jeeMains/JeeAdvance";
+import JeeAdvance from "./pages/jeeAdvance/JeeAdvance";
 
 
 
