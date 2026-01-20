@@ -17,7 +17,7 @@ import ExamTrack from "./pages/examTracker/ExamTracker";
 
 
 ///// jee mains //////
-import JeeMain from "./pages/jeeMains/JeeMain";
+import JeeMain from "./pages/jeeMains/JeeMains";
 import JeeMainSubject from "./pages/jeeMains/JeeMainSubject";
 import JeeMainChapterDetail from "./pages/jeeMains/JeeMainChapterDetail";
 
