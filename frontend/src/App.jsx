@@ -231,7 +231,7 @@ function App() {
 
 {/* =====   NEET    ===== */}
 <Route
-  path="/exam/wbjee"
+  path="/exam/neet"
   element={
     <ProtectedRoute>
       <NEET />
@@ -244,7 +244,7 @@ function App() {
   path="/exam/kcet"
   element={
     <ProtectedRoute>
-      <KVPY />
+      <KCET />
     </ProtectedRoute>
   }
 />

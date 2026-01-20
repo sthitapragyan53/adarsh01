@@ -83,7 +83,7 @@ const examCards = [
     exam: "NEET",
     desc: "NEET",
     tags: ["NEET", "Medical"],
-    route: "/exam/NEET",
+    route: "/exam/neet",
     logo: "🏁",
   },
    
