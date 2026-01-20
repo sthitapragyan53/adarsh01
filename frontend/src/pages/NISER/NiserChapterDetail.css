@@ -1,0 +1,269 @@
+/* ================= ROOT ================= */
+.chapter-detail-wrapper {
+  min-height: 100vh;
+  padding: 32px;
+  background: linear-gradient(
+    135deg,
+    #eef2ff,
+    #f8fafc
+  );
+}
+
+/* ================= GLASS BASE ================= */
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= HEADER ================= */
+.chapter-detail-header {
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  animation: fadeSlideDown 0.6s ease;
+}
+
+.chapter-detail-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.chapter-detail-header p {
+  font-size: 15px;
+  color: #475569;
+}
+
+/* ================= BACK BUTTON ================= */
+.back-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: all 0.25s ease;
+}
+
+.back-btn:hover {
+  background: rgba(0, 0, 0, 0.12);
+  transform: translateX(-4px);
+}
+
+/* ================= CONTENT SECTIONS ================= */
+.chapter-content {
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.7s ease;
+}
+
+.chapter-content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #1e293b;
+}
+
+/* ================= NOTES ================= */
+.note-block {
+  margin-bottom: 20px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.note-block:hover {
+  transform: translateY(-4px);
+}
+
+.note-block h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.note-block p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* ================= MCQs ================= */
+.mcq-block {
+  margin-bottom: 22px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.mcq-block p {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.mcq-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mcq-block li {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.mcq-block li:hover {
+  background: rgba(99, 102, 241, 0.15);
+  transform: translateX(6px);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .chapter-detail-wrapper {
+    padding: 20px;
+  }
+
+  .chapter-detail-header h1 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 480px) {
+  .chapter-detail-wrapper {
+    padding: 16px;
+  }
+
+  .chapter-detail-header h1 {
+    font-size: 22px;
+  }
+
+  .chapter-content h2 {
+    font-size: 20px;
+  }
+}
+
+
+
+/* ================= TABS ================= */
+.tab-bar {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 24px;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.tab.active {
+  background: rgba(99, 102, 241, 0.2);
+  color: #1e293b;
+  transform: translateY(-2px);
+}
+
+/* ================= COMPLETED STATE ================= */
+
+.complete-btn.completed {
+  background: linear-gradient(180deg, #4ade80 0%, #16a34a 100%);
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.5);
+  cursor: default;
+  filter: brightness(1.05);
+}
+
+/* Prevent click animation once completed */
+.complete-btn.completed:active {
+  transform: none;
+  filter: brightness(1.05);
+}
+
+/* Optional small check shine animation */
+.complete-btn.completed::after {
+  content: " ✓";
+  font-weight: 700;
+}
+
+/* ================= COMPLETE BUTTON ================= */
+.complete-btn {
+  margin-top: 12px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+
+  background: linear-gradient(180deg, #34d399 0%, #22c55e 100%);
+
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.2s ease;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.complete-btn:active {
+  transform: scale(0.96);
+  filter: brightness(0.9);
+}
+
+/* ================= TAB ANIMATION ================= */
+.fade-up {
+  animation: fadeUp 0.5s ease;
+}
+.pyq-image {
+  max-width: 100%;
+  margin: 12px 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.pyq-image:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}

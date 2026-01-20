@@ -59,6 +59,34 @@ const examCards = [
     route: "/exam/kcet",
     logo: "🏁",
   },
+
+  {
+    id: 8,
+    exam: "NISER",
+    desc: "NISER",
+    tags: ["NISER", "Engineering"],
+    route: "/exam/niser",
+    logo: "🏁",
+  },
+
+  {
+    id: 9,
+    exam: "NDA",
+    desc: "NDA",
+    tags: ["NDA", "Engineering"],
+    route: "/exam/nda",
+    logo: "🏁",
+  },
+
+    {
+    id: 9,
+    exam: "NEET",
+    desc: "NEET",
+    tags: ["NEET", "Medical"],
+    route: "/exam/NEET",
+    logo: "🏁",
+  },
+   
 ];
 
 export default function ExamTrack() {

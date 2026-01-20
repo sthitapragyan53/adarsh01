@@ -31,6 +31,32 @@ import JeeAdvance from "./pages/jeeAdvance/jeeAdvance";
 import WBJEE from "./pages/WBJEE/Wbjee";
 
 
+///// NDA //////
+import NDA from "./pages/NDA/Nda";
+
+
+///// Neet //////
+import NEET from "./pages/NEET/Neet";
+
+
+
+///// ojee //////
+
+import OJEE from "./pages/OJEE/Ojee";
+
+///// Niser //////
+
+import NISER from "./pages/NISER/Niser";
+
+///// Kvpy //////
+import KVPY from "./pages/KVPY/Kvpy";
+
+///// kcet //////
+import KCET from "./pages/KCET/Kcet";
+
+
+
+
 
 
 
@@ -172,6 +198,61 @@ function App() {
     </ProtectedRoute>
   }
 />
+
+{/* =====  OJEE  ===== */}
+<Route
+  path="/exam/ojee"
+  element={
+    <ProtectedRoute>
+      <OJEE />
+    </ProtectedRoute>
+  }
+/>
+
+{/* =====  NISER  ===== */}
+<Route
+  path="/exam/niser"
+  element={
+    <ProtectedRoute>
+      <NISER />
+    </ProtectedRoute>
+  }
+/>
+
+{/* =====  NDA    ===== */}
+<Route
+  path="/exam/nda"
+  element={
+    <ProtectedRoute>
+      <NDA />
+    </ProtectedRoute>
+  }
+/>
+
+{/* =====   NEET    ===== */}
+<Route
+  path="/exam/wbjee"
+  element={
+    <ProtectedRoute>
+      <NEET />
+    </ProtectedRoute>
+  }
+/>
+
+{/* =====   kcet    ===== */}
+<Route
+  path="/exam/kcet"
+  element={
+    <ProtectedRoute>
+      <KVPY />
+    </ProtectedRoute>
+  }
+/>
+
+
+
+
+
 
 
 
