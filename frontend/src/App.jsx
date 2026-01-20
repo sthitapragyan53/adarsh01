@@ -16,6 +16,12 @@ import SamplePaper from "./pages/samplepaper/SamplePaper";
 import ExamTrack from "./pages/examTracker/ExamTracker";
 
 
+///// jee mains //////
+import JeeMain from "./pages/jeeMains/JeeMain";
+import JeeMainSubject from "./pages/jeeMains/JeeMainSubject";
+import JeeMainChapterDetail from "./pages/jeeMains/JeeMainChapterDetail";
+
+
 
 
 
@@ -103,6 +109,38 @@ function App() {
         <Route path="/shortnotes" element={<Shortnotes />} />
         <Route path="/sample-papers" element={<SamplePaper />} />
         <Route path="/exam-tracker" element={<ExamTrack />} />
+
+
+
+
+        {/* ===== JEE MAIN ROUTES ===== */}
+<Route
+  path="/exam/jee-main"
+  element={
+    <ProtectedRoute>
+      <JeeMain />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/jee-main/:subject"
+  element={
+    <ProtectedRoute>
+      <JeeMainSubject />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/jee-main/:subject/:chapterId"
+  element={
+    <ProtectedRoute>
+      <JeeMainChapterDetail />
+    </ProtectedRoute>
+  }
+/>
+
 
 
 
