@@ -22,6 +22,11 @@ import JeeMainSubject from "./pages/jeeMains/JeeMainSubject";
 import JeeMainChapterDetail from "./pages/jeeMains/JeeMainChapterDetail";
 
 
+///// jee Advance //////
+
+import JeeMain from "./pages/jeeMains/JeeAdvance";
+
+
 
 
 
@@ -137,6 +142,18 @@ function App() {
   element={
     <ProtectedRoute>
       <JeeMainChapterDetail />
+    </ProtectedRoute>
+  }
+/>
+
+
+{/* ===== JEE  Advance ===== */}
+
+<Route
+  path="/exam/jee-advance"
+  element={
+    <ProtectedRoute>
+      <JeeMain />
     </ProtectedRoute>
   }
 />
