@@ -48,7 +48,10 @@ export const subjectsData = {
       { name: "Mathematics", slug: "mathematics" },
     ],
 
-    JEE: {
+    
+  },
+
+  JEE: {
 
        "12": [
       { name: "Physics", slug: "physics" },
@@ -57,5 +60,4 @@ export const subjectsData = {
     ],
 
     }
-  },
 };
