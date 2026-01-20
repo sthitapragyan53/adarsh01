@@ -1,20 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
-import "./roadMap.css"; // reuse same CSS
-=======
-import "./examTracker.css";
-
-// Import logos
-import jeeMain from "../../assets/exams/jee-main.png";
-import jeeAdvanced from "../../assets/exams/jee-advanced.png";
-import boards from "../../assets/exams/boards.png";
-import wbjee from "../../assets/exams/wbjee.png";
-import ojee from "../../assets/exams/ojee.png";
-
-
-
->>>>>>> 0c1213e6936762e5e5008d16cb0e155ef1eb027b
+import "./examTracker.css"; // reuse same CSS
 
 const examCards = [
   {
