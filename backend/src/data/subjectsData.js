@@ -47,5 +47,15 @@ export const subjectsData = {
       { name: "Chemistry", slug: "chemistry" },
       { name: "Mathematics", slug: "mathematics" },
     ],
+
+    JEE: {
+
+       "12": [
+      { name: "Physics", slug: "physics" },
+      { name: "Chemistry", slug: "chemistry" },
+      { name: "Mathematics", slug: "mathematics" },
+    ],
+
+    }
   },
 };

@@ -92,7 +92,7 @@ export default function JeeMain() {
       {/* ===== TOP SECTION ===== */}
       <section className="dashboard-overview glass">
         <div>
-          <h1>JEE Main • Class 12</h1>
+          <h1>JEE Main</h1>
           <p className="overview-subtext">
             Track your JEE Main preparation subject-wise
           </p>

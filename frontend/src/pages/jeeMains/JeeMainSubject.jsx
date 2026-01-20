@@ -72,7 +72,7 @@ export default function JeeMainSubject() {
 
       <div className="subject-header">
         <h1>{subjectData.subject}</h1>
-        <p>JEE Main • Class 12</p>
+        <p>JEE Main</p>
       </div>
 
       <div className="chapter-grid">
