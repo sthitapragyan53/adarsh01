@@ -150,7 +150,7 @@ function App() {
 {/* ===== JEE  Advance ===== */}
 
 <Route
-  path="/exam/jee-advance"
+  path="/exam/jee-advanced"
   element={
     <ProtectedRoute>
       <JeeAdvance />
