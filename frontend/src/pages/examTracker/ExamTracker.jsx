@@ -1,10 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
 import "./examTracker.css"; // reuse same CSS
-=======
-import "./roadMap.css"; // reuse same CSS
->>>>>>> fe15f58e9435c34138cce29a2742c1c8e8d417e1
 
 const examCards = [
   {
