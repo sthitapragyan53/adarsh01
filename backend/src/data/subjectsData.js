@@ -59,5 +59,69 @@ export const subjectsData = {
       { name: "Mathematics", slug: "mathematics" },
     ],
 
-    }
+    },
+
+
+    
+  OJEE: {
+
+       "12": [
+      { name: "Physics", slug: "physics" },
+      { name: "Chemistry", slug: "chemistry" },
+      { name: "Mathematics", slug: "mathematics" },
+    ],
+
+    },
+
+    
+  WBJEE: {
+
+       "12": [
+      { name: "Physics", slug: "physics" },
+      { name: "Chemistry", slug: "chemistry" },
+      { name: "Mathematics", slug: "mathematics" },
+    ],
+
+    },
+
+    NISER: {
+
+       "12": [
+      { name: "Physics", slug: "physics" },
+      { name: "Chemistry", slug: "chemistry" },
+      { name: "Mathematics", slug: "mathematics" },
+    ],
+
+    },
+
+        KCET: {
+
+       "12": [
+      { name: "Physics", slug: "physics" },
+      { name: "Chemistry", slug: "chemistry" },
+      { name: "Mathematics", slug: "mathematics" },
+    ],
+
+    },
+
+    
+      NDA: {
+
+       "12": [
+      { name: "Physics", slug: "physics" },
+      { name: "Chemistry", slug: "chemistry" },
+      { name: "Mathematics", slug: "mathematics" },
+    ],
+
+    },
+
+          NEET: {
+
+       "12": [
+      { name: "Physics", slug: "physics" },
+      { name: "Chemistry", slug: "chemistry" },
+      { name: "Mathematics", slug: "mathematics" },
+    ],
+
+    },
 };
