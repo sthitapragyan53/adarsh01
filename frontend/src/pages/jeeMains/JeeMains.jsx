@@ -1,4 +1,4 @@
-import "./jeeMain.css";
+import "./jeeMains.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
