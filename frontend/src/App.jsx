@@ -37,8 +37,8 @@ import WBJEEChapterDetail from "./pages/WBJEE/WbjeeChapterDetails";
 
 ///// NDA //////
 import NDA from "./pages/NDA/Nda";
-import NDASubject from "./pages/NDA/JeeMainSubject";
-import NDAChapterDetail from "./pages/NDA/JeeMainChapterDetail";
+import NDASubject from "./pages/NDA/NdaSubject";
+import NDAChapterDetail from "./pages/NDA/NdaChapterDetail";
 
 
 ///// Neet //////
