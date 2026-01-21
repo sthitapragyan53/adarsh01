@@ -81,7 +81,7 @@ export default function JeeMainSubject() {
             key={chapter.id}
             className="chapter-card"
             onClick={() =>
-              navigate(`/exam/jee-main/${subject}/${chapter.id}`)
+              navigate(`/exam/wbjeeSubject/${subject}/${chapter.id}`)
             }
           >
             <strong>Unit {chapter.unit}</strong>

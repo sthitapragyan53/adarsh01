@@ -208,10 +208,10 @@ function App() {
 
 
 <Route
-  path="/exam/jee-main/:subject"
+  path="/exam/jee-Advance/:subject"
   element={
     <ProtectedRoute>
-      <JeeMainSubject />
+      <JeeAdvanceSubject />
     </ProtectedRoute>
   }
 />
@@ -238,19 +238,19 @@ function App() {
 />
 
 <Route
-  path="/exam/jee-main/:subject"
+  path="/exam/wbjeeSubject/:subject"
   element={
     <ProtectedRoute>
-      <JeeMainSubject />
+      < WBJEESubject />
     </ProtectedRoute>
   }
 />
 
 <Route
-  path="/exam/jee-main/:subject/:chapterId"
+  path="/exam/WbjeeChapter/:subject/:chapterId"
   element={
     <ProtectedRoute>
-      <JeeMainChapterDetail />
+      <WBJEEChapterDetail />
     </ProtectedRoute>
   }
 />
@@ -268,10 +268,10 @@ function App() {
 />
 
 <Route
-  path="/exam/jee-main/:subject"
+  path="/exam/ojeeSubject/:subject"
   element={
     <ProtectedRoute>
-      <JeeMainSubject />
+      <OJEESubject />
     </ProtectedRoute>
   }
 />
@@ -298,10 +298,10 @@ function App() {
 />
 
 <Route
-  path="/exam/jee-main/:subject"
+  path="/exam/niserSubject/:subject"
   element={
     <ProtectedRoute>
-      <JeeMainSubject />
+      <NISERSubject />
     </ProtectedRoute>
   }
 />
@@ -328,10 +328,10 @@ function App() {
 />
 
 <Route
-  path="/exam/jee-main/:subject"
+  path="/exam/ndaSubject/:subject"
   element={
     <ProtectedRoute>
-      <JeeMainSubject />
+      <NDASubject />
     </ProtectedRoute>
   }
 />
@@ -358,10 +358,10 @@ function App() {
 />
 
 <Route
-  path="/exam/jee-main/:subject"
+  path="/exam/neetSubject/:subject"
   element={
     <ProtectedRoute>
-      <JeeMainSubject />
+      <NEETSubject />
     </ProtectedRoute>
   }
 />
@@ -388,10 +388,39 @@ function App() {
 />
 
 <Route
-  path="/exam/jee-main/:subject"
+  path="/exam/KcetSubject/:subject"
   element={
     <ProtectedRoute>
-      <JeeMainSubject />
+      <KCETSubject />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/jee-main/:subject/:chapterId"
+  element={
+    <ProtectedRoute>
+      <JeeMainChapterDetail />
+    </ProtectedRoute>
+  }
+/>
+
+
+{/* =====   KVPY    ===== */}
+<Route
+  path="/exam/kvpy"
+  element={
+    <ProtectedRoute>
+      <KVPY />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/kvpySbject/:subject"
+  element={
+    <ProtectedRoute>
+      <KVPYSubject />
     </ProtectedRoute>
   }
 />
