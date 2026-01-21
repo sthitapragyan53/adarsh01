@@ -1,6 +1,6 @@
-export const jeeChemistryIndex = {
+export const WbjeeChemistryIndex = {
   subject: "Chemistry",
-  board: "JEE Mains",
+  board: "WBJEE",
   class: "12",
 
   chapters: [
@@ -91,4 +91,4 @@ export const jeeChemistryIndex = {
     },
   ],
 };
-export default jeeChemistryIndex;
+export default WbjeeChemistryIndex;
