@@ -25,34 +25,50 @@ import JeeMainChapterDetail from "./pages/jeeMains/JeeMainChapterDetail";
 ///// jee Advance //////
 
 import JeeAdvance from "./pages/jeeAdvance/jeeAdvance";
+import JeeAdvanceSubject from "./pages/jeeAdvance/JeeAdvanceSubject";
+import JeeAdvanceChapterDetail from "./pages/jeeAdvance/JeeAdvanceChapterDetail";
 
 
 ///// WBjee //////
 import WBJEE from "./pages/WBJEE/Wbjee";
+import WBJEESubject from "./pages/WBJEE/WbjeeSubject";
+import WBJEEChapterDetail from "./pages/WBJEE/WbjeeChapterDetails";
 
 
 ///// NDA //////
 import NDA from "./pages/NDA/Nda";
+import NDASubject from "./pages/jeeMains/JeeMainSubject";
+import NDAChapterDetail from "./pages/jeeMains/JeeMainChapterDetail";
 
 
 ///// Neet //////
 import NEET from "./pages/NEET/Neet";
+import NEETSubject from "./pages/NEET/NEETSubject";
+import NEETChapterDetail from "./pages/jeeMains/NEETChapterDetail";
 
 
 
 ///// ojee //////
 
 import OJEE from "./pages/OJEE/Ojee";
+import OJEESubject from "./pages/OJEE/OjeeSubject";
+import OJEEChapterDetail from "./pages/OJEE/OjeeChapterDetail";
 
 ///// Niser //////
 
 import NISER from "./pages/NISER/Niser";
+import NISERSubject from "./pages/NISER/NiserSubject";
+import NISERChapterDetail from "./pages/NISER/NiserChapterDetail";
 
 ///// Kvpy //////
 import KVPY from "./pages/KVPY/Kvpy";
+import KVPYSubject from "./pages/KVPY/KvpySubject";
+import KVPYChapterDetail from "./pages/KVPY/KvpyChapterDetail";
 
 ///// kcet //////
 import KCET from "./pages/KCET/Kcet";
+import KCETSubject from "./pages/KCET/KcetSubject";
+import KCETChapterDetail from "./pages/KCET/KcetChapterDetail";
 
 
 
@@ -189,6 +205,28 @@ function App() {
   }
 />
 
+
+
+<Route
+  path="/exam/jee-main/:subject"
+  element={
+    <ProtectedRoute>
+      <JeeMainSubject />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/jee-main/:subject/:chapterId"
+  element={
+    <ProtectedRoute>
+      <JeeMainChapterDetail />
+    </ProtectedRoute>
+  }
+/>
+
+
+
 {/* =====  Wbjee  ===== */}
 <Route
   path="/exam/wbjee"
@@ -198,6 +236,26 @@ function App() {
     </ProtectedRoute>
   }
 />
+
+<Route
+  path="/exam/jee-main/:subject"
+  element={
+    <ProtectedRoute>
+      <JeeMainSubject />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/jee-main/:subject/:chapterId"
+  element={
+    <ProtectedRoute>
+      <JeeMainChapterDetail />
+    </ProtectedRoute>
+  }
+/>
+
+
 
 {/* =====  OJEE  ===== */}
 <Route
@@ -209,6 +267,26 @@ function App() {
   }
 />
 
+<Route
+  path="/exam/jee-main/:subject"
+  element={
+    <ProtectedRoute>
+      <JeeMainSubject />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/jee-main/:subject/:chapterId"
+  element={
+    <ProtectedRoute>
+      <JeeMainChapterDetail />
+    </ProtectedRoute>
+  }
+/>
+
+
+
 {/* =====  NISER  ===== */}
 <Route
   path="/exam/niser"
@@ -218,6 +296,26 @@ function App() {
     </ProtectedRoute>
   }
 />
+
+<Route
+  path="/exam/jee-main/:subject"
+  element={
+    <ProtectedRoute>
+      <JeeMainSubject />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/jee-main/:subject/:chapterId"
+  element={
+    <ProtectedRoute>
+      <JeeMainChapterDetail />
+    </ProtectedRoute>
+  }
+/>
+
+
 
 {/* =====  NDA    ===== */}
 <Route
@@ -229,6 +327,26 @@ function App() {
   }
 />
 
+<Route
+  path="/exam/jee-main/:subject"
+  element={
+    <ProtectedRoute>
+      <JeeMainSubject />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/jee-main/:subject/:chapterId"
+  element={
+    <ProtectedRoute>
+      <JeeMainChapterDetail />
+    </ProtectedRoute>
+  }
+/>
+
+
+
 {/* =====   NEET    ===== */}
 <Route
   path="/exam/neet"
@@ -239,6 +357,26 @@ function App() {
   }
 />
 
+<Route
+  path="/exam/jee-main/:subject"
+  element={
+    <ProtectedRoute>
+      <JeeMainSubject />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/jee-main/:subject/:chapterId"
+  element={
+    <ProtectedRoute>
+      <JeeMainChapterDetail />
+    </ProtectedRoute>
+  }
+/>
+
+
+
 {/* =====   kcet    ===== */}
 <Route
   path="/exam/kcet"
@@ -248,6 +386,26 @@ function App() {
     </ProtectedRoute>
   }
 />
+
+<Route
+  path="/exam/jee-main/:subject"
+  element={
+    <ProtectedRoute>
+      <JeeMainSubject />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/exam/jee-main/:subject/:chapterId"
+  element={
+    <ProtectedRoute>
+      <JeeMainChapterDetail />
+    </ProtectedRoute>
+  }
+/>
+
+
 
 
 

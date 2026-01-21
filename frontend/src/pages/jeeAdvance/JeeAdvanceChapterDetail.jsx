@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
-import "./jeeMainChapterDetail.css";
+import "./jeeAdvanceChapterDetail.css";
 
 export default function JeeMainChapterDetail() {
   const navigate = useNavigate();

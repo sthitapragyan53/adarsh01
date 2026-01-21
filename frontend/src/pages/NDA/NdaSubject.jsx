@@ -9,7 +9,7 @@ export default function JeeMainSubject() {
   /* ✅ Fixed params for JEE Main */
   const { subject } = useParams();
   const classLevel = "12";
-  const board = "JEE";
+  const board = "NDA";
 
   const [subjectData, setSubjectData] = useState(null);
   const [loading, setLoading] = useState(true);

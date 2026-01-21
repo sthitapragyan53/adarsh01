@@ -9,7 +9,7 @@ export default function JeeMainChapterDetail() {
   /* ✅ Fixed params for JEE Main */
   const { subject, chapterId } = useParams();
   const classLevel = "12";
-  const board = "JEE";
+  const board = "KCET";
 
   const [chapter, setChapter] = useState(null);
   const [content, setContent] = useState(null);
