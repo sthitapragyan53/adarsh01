@@ -43,7 +43,7 @@ import NDAChapterDetail from "./pages/jeeMains/JeeMainChapterDetail";
 
 ///// Neet //////
 import NEET from "./pages/NEET/Neet";
-import NEETSubject from "./pages/NEET/NEETSubject";
+import NEETSubject from "./pages/NEET/NeetSubject";
 import NEETChapterDetail from "./pages/jeeMains/NEETChapterDetail";
 
 
