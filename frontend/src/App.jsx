@@ -37,14 +37,14 @@ import WBJEEChapterDetail from "./pages/WBJEE/WbjeeChapterDetails";
 
 ///// NDA //////
 import NDA from "./pages/NDA/Nda";
-import NDASubject from "./pages/jeeMains/JeeMainSubject";
-import NDAChapterDetail from "./pages/jeeMains/JeeMainChapterDetail";
+import NDASubject from "./pages/NDA/JeeMainSubject";
+import NDAChapterDetail from "./pages/NDA/JeeMainChapterDetail";
 
 
 ///// Neet //////
 import NEET from "./pages/NEET/Neet";
 import NEETSubject from "./pages/NEET/NeetSubject";
-import NEETChapterDetail from "./pages/jeeMains/NeetChapterDetail";
+import NEETChapterDetail from "./pages/NEET/NeetChapterDetail";
 
 
 
